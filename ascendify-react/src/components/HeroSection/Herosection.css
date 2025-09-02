@@ -1,0 +1,124 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.background-animations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, rgba(0, 0, 0, 1) 70%);
+  z-index: 1;
+  animation: backgroundMove 30s infinite linear;
+}
+
+@keyframes backgroundMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 58px;
+  line-height: 1.2;
+  color: var(--color-electric-blue);
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+.hero-content p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  color: var(--color-light-grey);
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.btn {
+  padding: 18px 35px;
+  font-size: 19px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.primary-btn {
+  background: linear-gradient(90deg, var(--color-electric-blue) 0%, var(--color-royal-purple) 100%);
+  color: var(--color-white);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.6);
+}
+
+.primary-btn:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 30px rgba(0, 191, 255, 0.8);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border: 2px solid var(--color-electric-blue);
+  color: var(--color-electric-blue);
+}
+
+.secondary-btn:hover {
+  background-color: var(--color-electric-blue);
+  color: var(--color-deep-black);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+}
+
+/* Basic Responsiveness */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 42px;
+  }
+  .hero-content p {
+    font-size: 18px;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .btn {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+  .hero-content p {
+    font-size: 16px;
+  }
+  .btn {
+    font-size: 16px;
+    padding: 15px 25px;
+  }
+}
